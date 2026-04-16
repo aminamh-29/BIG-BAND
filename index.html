@@ -604,6 +604,58 @@
     }
     button[type=submit]:hover { background: var(--ink-soft); transform: translateY(-2px); }
 
+    /* ========= FAQ ========= */
+    #faq {
+      padding: 140px 48px;
+      background: var(--cream-2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-wrap {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1.4fr;
+      gap: 80px; align-items: start;
+    }
+    .faq-left h2 { margin-bottom: 24px; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+    }
+    .faq-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q {
+      width: 100%;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 24px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+      font-weight: 400; color: var(--ink);
+      text-align: left; padding: 0;
+      letter-spacing: -0.005em;
+      cursor: pointer;
+    }
+    .faq-q .plus {
+      width: 22px; height: 22px; flex-shrink: 0;
+      position: relative; color: var(--gold);
+    }
+    .faq-q .plus::before, .faq-q .plus::after {
+      content: ""; position: absolute; background: currentColor;
+      transition: transform .3s ease, opacity .3s ease;
+    }
+    .faq-q .plus::before { top: 10px; left: 0; width: 22px; height: 1.5px; }
+    .faq-q .plus::after  { top: 0; left: 10px; width: 1.5px; height: 22px; }
+    .faq-item.open .faq-q .plus::after { transform: rotate(90deg); opacity: 0; }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height .4s ease, margin-top .3s ease;
+    }
+    .faq-item.open .faq-a { max-height: 400px; margin-top: 16px; }
+    .faq-a p {
+      color: var(--text-muted); font-weight: 300;
+      font-size: 0.98rem; line-height: 1.8;
+      max-width: 62ch;
+    }
+
     /* ========= FOOTER ========= */
     footer {
       padding: 80px 48px 32px;
@@ -650,8 +702,9 @@
     }
 
     @media (max-width: 800px) {
-      nav, .hero, #about, #process, #testimonial, #contact, footer,
+      nav, .hero, #about, #process, #testimonial, #faq, #contact, footer,
       .numbers { padding-left: 24px; padding-right: 24px; }
+      .faq-wrap { grid-template-columns: 1fr; gap: 40px; }
       .services-header { padding-left: 24px; padding-right: 24px; }
       .hero-top { flex-direction: column; align-items: flex-start; gap: 18px; }
       .hero-meta { text-align: left; align-items: flex-start; }
@@ -923,6 +976,44 @@
   </section>
 
   <!-- CONTACT -->
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="faq-wrap">
+      <div class="faq-left reveal">
+        <p class="eyebrow" style="margin-bottom: 24px;">Questions</p>
+        <h2 class="h2">Frequently <em>asked.</em></h2>
+        <p class="lead" style="margin-top: 20px;">Still wondering if we're the right fit? Reach out — we'll answer honestly.</p>
+      </div>
+
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Who do you work with?<span class="plus"></span></button>
+          <div class="faq-a"><p>Creators, working professionals, entrepreneurs, students, freelancers, and brands. If you have something worth saying and want it seen, we can help.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">How long does a typical project take?<span class="plus"></span></button>
+          <div class="faq-a"><p>A personal branding engagement runs 4–6 weeks from discovery to launch. Ongoing social media retainers are month-to-month. Full AI clone production can be turned around in 2–3 weeks once we have your source footage.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What does an AI Clone actually do?<span class="plus"></span></button>
+          <div class="faq-a"><p>We capture a short, high-quality session of you on camera and train a lifelike digital twin that can deliver new content in your voice and likeness — so you can publish consistently without spending hours filming.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Do you work with clients outside India?<span class="plus"></span></button>
+          <div class="faq-a"><p>Yes. Our studios are in Bengaluru and Mumbai, but strategy, content, and AI production work is fully remote. We've shipped for clients across the US, UK, and UAE.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">How is pricing structured?<span class="plus"></span></button>
+          <div class="faq-a"><p>Project-based for branding and video production, monthly retainers for social and creator training. We'll scope your needs on a 20-minute intro call and send a written proposal within 48 hours.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Do I keep ownership of everything you create?<span class="plus"></span></button>
+          <div class="faq-a"><p>Always. Every deliverable — footage, AI model weights, brand assets, social content — is transferred to you on completion. No lock-in, no recurring license fees.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="contact-left reveal">
       <p class="eyebrow" style="margin-bottom: 24px;">Get in touch</p>
@@ -1016,6 +1107,14 @@
       entries.forEach(e => { if (e.isIntersecting) { animate(e.target); cio.unobserve(e.target); } });
     }, { threshold: 0.5 });
     document.querySelectorAll('.stat-value').forEach(el => cio.observe(el));
+
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const q = item.querySelector('.faq-q');
+      q.addEventListener('click', () => {
+        const open = item.classList.toggle('open');
+        q.setAttribute('aria-expanded', String(open));
+      });
+    });
   </script>
 </body>
 </html>
