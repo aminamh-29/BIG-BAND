@@ -159,6 +159,64 @@
     }
     .nav-cta:hover::after { transform: translateX(3px); }
 
+    /* Hamburger */
+    .nav-burger {
+      display: none;
+      width: 44px; height: 44px;
+      border: 1px solid var(--border-2);
+      border-radius: 999px;
+      align-items: center; justify-content: center;
+      position: relative;
+      background: transparent;
+      z-index: 110;
+    }
+    .nav-burger span {
+      display: block; width: 18px; height: 1.5px;
+      background: var(--ink);
+      position: absolute;
+      transition: transform .3s ease, top .3s ease, opacity .2s ease;
+    }
+    .nav-burger span:nth-child(1) { top: 16px; }
+    .nav-burger span:nth-child(2) { top: 22px; }
+    .nav-burger span:nth-child(3) { top: 28px; }
+    body.menu-open .nav-burger span:nth-child(1) { top: 22px; transform: rotate(45deg); }
+    body.menu-open .nav-burger span:nth-child(2) { opacity: 0; }
+    body.menu-open .nav-burger span:nth-child(3) { top: 22px; transform: rotate(-45deg); }
+
+    .mobile-menu {
+      position: fixed; inset: 0; z-index: 99;
+      background: var(--cream);
+      padding: 120px 32px 48px;
+      display: flex; flex-direction: column;
+      gap: 32px;
+      opacity: 0; pointer-events: none;
+      transform: translateY(-20px);
+      transition: opacity .35s ease, transform .35s ease;
+    }
+    body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; transform: none; }
+    body.menu-open { overflow: hidden; }
+    .mobile-menu a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem; font-weight: 400;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 18px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .mobile-menu a::after { content: "→"; color: var(--gold); font-size: 1.4rem; }
+    .mobile-menu .mobile-cta {
+      margin-top: 16px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem; font-weight: 500;
+      background: var(--ink); color: var(--cream);
+      border: none;
+      padding: 18px 26px; border-radius: 999px;
+      justify-content: center; align-self: flex-start;
+      letter-spacing: 0.02em;
+    }
+    .mobile-menu .mobile-cta::after { color: var(--cream); }
+
     /* ========= HERO ========= */
     .hero {
       min-height: 100vh;
@@ -598,7 +656,8 @@
       .hero-top { flex-direction: column; align-items: flex-start; gap: 18px; }
       .hero-meta { text-align: left; align-items: flex-start; }
       nav { padding-top: 16px; padding-bottom: 16px; }
-      .nav-links { display: none; }
+      .nav-links, nav > .nav-cta { display: none; }
+      .nav-burger { display: inline-flex; }
       .hero { padding-top: 120px; }
       .hero-bottom { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -624,7 +683,19 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="#contact" class="nav-cta">Start a project</a>
+    <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" data-close>About</a>
+    <a href="#services" data-close>Services</a>
+    <a href="#process" data-close>Process</a>
+    <a href="#contact" data-close>Contact</a>
+    <a href="#contact" class="mobile-cta" data-close>Start a project</a>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
@@ -893,6 +964,14 @@
   </footer>
 
   <script>
+    const burger = document.getElementById('navBurger');
+    const closeMenu = () => { document.body.classList.remove('menu-open'); burger.setAttribute('aria-expanded', 'false'); };
+    burger.addEventListener('click', () => {
+      const open = document.body.classList.toggle('menu-open');
+      burger.setAttribute('aria-expanded', String(open));
+    });
+    document.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', closeMenu));
+
     const nav = document.getElementById('nav');
     const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 30);
     window.addEventListener('scroll', onScroll, { passive: true });
