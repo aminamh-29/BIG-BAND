@@ -1,0 +1,40 @@
+Variables · CSS
+Copy
+
+/* =============================================
+   variables.css — all design tokens
+   ============================================= */
+ 
+:root {
+  /* ---- Colors ---- */
+  --cream:       #F5F0E8;
+  --ink:         #0E0C09;
+  --gold:        #C9A84C;
+  --gold-light:  #E8C96A;
+  --rust:        #8B3A2A;
+  --sage:        #5C7A6B;
+  --text-muted:  #6B6456;
+  --border:      rgba(14, 12, 9, 0.12);
+ 
+  /* ---- Typography ---- */
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body:    'DM Sans', sans-serif;
+ 
+  /* ---- Spacing ---- */
+  --section-pad:  140px;
+  --side-pad:     60px;
+ 
+  /* ---- Transitions ---- */
+  --ease-out:    cubic-bezier(0.23, 1, 0.32, 1);
+  --dur-fast:    0.25s;
+  --dur-mid:     0.4s;
+  --dur-slow:    0.8s;
+}
+ 
+/* ---- Mobile overrides ---- */
+@media (max-width: 900px) {
+  :root {
+    --section-pad: 80px;
+    --side-pad:    24px;
+  }
+}
