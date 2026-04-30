@@ -11,19 +11,19 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --cream:       #F5F0E8;
-      --cream-2:     #EFE9DE;
-      --surface:     #FBF7EF;
-      --ink:         #0E0C09;
-      --ink-soft:    #1A1712;
-      --gold:        #C9A84C;
-      --gold-light:  #E8C96A;
-      --rust:        #8B3A2A;
-      --sage:        #5C7A6B;
-      --text-muted:  #6B6456;
-      --text-xdim:   #9A9282;
-      --border:      rgba(14,12,9,0.12);
-      --border-2:    rgba(14,12,9,0.22);
+      --cream:       #2A0A52;
+      --cream-2:     #200740;
+      --surface:     #360F6B;
+      --ink:         #F5EFE3;
+      --ink-soft:    #E8DFCB;
+      --gold:        #FCD12A;
+      --gold-light:  #FFE066;
+      --rust:        #B43A8A;
+      --sage:        #8A6FD1;
+      --text-muted:  #C9BCE6;
+      --text-xdim:   #8E7FB3;
+      --border:      rgba(245,239,227,0.16);
+      --border-2:    rgba(245,239,227,0.28);
       --radius:      14px;
     }
 
@@ -113,7 +113,7 @@
     }
     nav.scrolled {
       padding: 14px 48px;
-      background: rgba(245,240,232,0.82);
+      background: rgba(42,10,82,0.82);
       border-bottom-color: var(--border);
       backdrop-filter: blur(14px);
     }
@@ -125,7 +125,7 @@
     .nav-logo .dot {
       width: 7px; height: 7px; border-radius: 50%;
       background: var(--gold); display: inline-block;
-      box-shadow: 0 0 10px rgba(201,168,76,0.6);
+      box-shadow: 0 0 10px rgba(252,209,42,0.7);
       animation: pulse 2.4s ease-in-out infinite;
     }
     @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
@@ -230,14 +230,14 @@
     .hero-bg::before {
       content: ""; position: absolute;
       width: 700px; height: 700px;
-      background: radial-gradient(circle, rgba(201,168,76,0.28), transparent 60%);
+      background: radial-gradient(circle, rgba(252,209,42,0.28), transparent 60%);
       top: 10%; right: -10%; filter: blur(60px);
       animation: float 16s ease-in-out infinite;
     }
     .hero-bg::after {
       content: ""; position: absolute;
       width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(139,58,42,0.18), transparent 60%);
+      background: radial-gradient(circle, rgba(180,58,138,0.22), transparent 60%);
       bottom: -10%; left: -5%; filter: blur(60px);
       animation: float 20s ease-in-out infinite reverse;
     }
@@ -354,7 +354,7 @@
       padding: 36px 32px;
       border: 1px dashed var(--border-2);
       border-radius: var(--radius);
-      background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(92,122,107,0.04));
+      background: linear-gradient(135deg, rgba(252,209,42,0.10), rgba(138,111,209,0.06));
     }
     .about-quote p {
       font-family: 'Cormorant Garamond', serif;
@@ -783,7 +783,7 @@
       <span></span><span></span><span></span>
     </button>
   </nav>
-
+  
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="#about" data-close>About</a>
@@ -1069,7 +1069,7 @@
         </div>
         <div class="contact-row">
           <span class="label">Phone</span>
-          <a class="value" href="tel:+914159002200">+1 (415) 900 2200</a>
+          <a class="value" href="tel:+919746455117">+91 97464 55117</a>
         </div>
         <div class="contact-row">
           <span class="label">Office</span>
