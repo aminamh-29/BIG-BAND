@@ -11,19 +11,19 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --cream:       #2A0A52;
-      --cream-2:     #200740;
-      --surface:     #360F6B;
-      --ink:         #F5EFE3;
-      --ink-soft:    #E8DFCB;
-      --gold:        #FCD12A;
-      --gold-light:  #FFE066;
-      --rust:        #B43A8A;
-      --sage:        #8A6FD1;
-      --text-muted:  #C9BCE6;
-      --text-xdim:   #8E7FB3;
-      --border:      rgba(245,239,227,0.16);
-      --border-2:    rgba(245,239,227,0.28);
+      --cream:       #fffdeb;
+      --cream-2:     #f5f1d4;
+      --surface:     #fffdeb;
+      --ink:         #9b0f06;
+      --ink-soft:    #7a0c05;
+      --gold:        #9b0f06;
+      --gold-light:  #c41a0d;
+      --rust:        #9b0f06;
+      --sage:        #9b0f06;
+      --text-muted:  rgba(155,15,6,0.7);
+      --text-xdim:   rgba(155,15,6,0.5);
+      --border:      rgba(155,15,6,0.18);
+      --border-2:    rgba(155,15,6,0.32);
       --radius:      14px;
     }
 
@@ -113,7 +113,7 @@
     }
     nav.scrolled {
       padding: 14px 48px;
-      background: rgba(42,10,82,0.82);
+      background: rgba(255,253,235,0.92);
       border-bottom-color: var(--border);
       backdrop-filter: blur(14px);
     }
@@ -125,7 +125,7 @@
     .nav-logo .dot {
       width: 7px; height: 7px; border-radius: 50%;
       background: var(--gold); display: inline-block;
-      box-shadow: 0 0 10px rgba(252,209,42,0.7);
+      box-shadow: 0 0 10px rgba(155,15,6,0.7);
       animation: pulse 2.4s ease-in-out infinite;
     }
     @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
@@ -230,14 +230,14 @@
     .hero-bg::before {
       content: ""; position: absolute;
       width: 700px; height: 700px;
-      background: radial-gradient(circle, rgba(252,209,42,0.28), transparent 60%);
+      background: radial-gradient(circle, rgba(155,15,6,0.18), transparent 60%);
       top: 10%; right: -10%; filter: blur(60px);
       animation: float 16s ease-in-out infinite;
     }
     .hero-bg::after {
       content: ""; position: absolute;
       width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(180,58,138,0.22), transparent 60%);
+      background: radial-gradient(circle, rgba(155,15,6,0.14), transparent 60%);
       bottom: -10%; left: -5%; filter: blur(60px);
       animation: float 20s ease-in-out infinite reverse;
     }
@@ -354,7 +354,7 @@
       padding: 36px 32px;
       border: 1px dashed var(--border-2);
       border-radius: var(--radius);
-      background: linear-gradient(135deg, rgba(252,209,42,0.10), rgba(138,111,209,0.06));
+      background: linear-gradient(135deg, rgba(155,15,6,0.08), rgba(155,15,6,0.04));
     }
     .about-quote p {
       font-family: 'Cormorant Garamond', serif;
@@ -451,7 +451,7 @@
       color: var(--cream);
     }
     .card.dark h3 { color: var(--cream); }
-    .card.dark p { color: rgba(245,240,232,0.6); }
+    .card.dark p { color: rgba(255,253,235,0.75); }
     .card.dark .card-icon { color: var(--cream); opacity: 0.85; }
     .card.dark .tag { color: var(--cream); }
     .card.dark:hover .tag { color: var(--gold-light); }
@@ -529,7 +529,7 @@
       border-bottom: 1px solid var(--border);
       text-align: center;
     }
-    #testimonial .eyebrow { color: rgba(245,240,232,0.6); }
+    #testimonial .eyebrow { color: rgba(255,253,235,0.7); }
     #testimonial .eyebrow::before { background: var(--gold); }
     .quote-big {
       max-width: 1000px; margin: 0 auto;
@@ -544,7 +544,7 @@
       margin-top: 40px;
       font-family: 'DM Sans', sans-serif;
       font-size: 0.8rem;
-      color: rgba(245,240,232,0.6);
+      color: rgba(255,253,235,0.7);
       letter-spacing: 0.14em; text-transform: uppercase;
       font-weight: 500;
     }
@@ -678,7 +678,7 @@
     footer {
       padding: 96px 48px 40px;
       background: var(--cream-2);
-      color: rgba(245,240,232,0.65);
+      color: rgba(155,15,6,0.75);
     }
     .footer-wrap { max-width: 1440px; margin: 0 auto; }
     .footer-grid {
@@ -700,7 +700,7 @@
     .footer-tagline {
       font-size: 0.95rem; line-height: 1.7;
       max-width: 28ch;
-      color: rgba(245,240,232,0.55);
+      color: rgba(155,15,6,0.65);
     }
     .footer-col h4 {
       font-family: 'DM Sans', sans-serif;
@@ -712,7 +712,7 @@
     }
     .footer-col ul { display: flex; flex-direction: column; gap: 14px; list-style: none; padding: 0; margin: 0; }
     .footer-col a {
-      color: rgba(245,240,232,0.75);
+      color: rgba(155,15,6,0.8);
       font-size: 0.95rem;
       transition: color .2s;
     }
@@ -720,18 +720,18 @@
     .footer-bottom {
       display: flex; justify-content: space-between; align-items: center;
       padding-top: 32px;
-      border-top: 1px solid rgba(245,240,232,0.12);
+      border-top: 1px solid rgba(155,15,6,0.18);
       font-size: 0.78rem;
-      color: rgba(245,240,232,0.5);
+      color: rgba(155,15,6,0.6);
       flex-wrap: wrap; gap: 16px;
     }
     .footer-socials { display: flex; gap: 14px; }
     .footer-socials a {
       width: 40px; height: 40px;
-      border: 1px solid rgba(245,240,232,0.25);
+      border: 1px solid rgba(155,15,6,0.32);
       border-radius: 999px;
       display: inline-flex; align-items: center; justify-content: center;
-      color: rgba(245,240,232,0.8);
+      color: rgba(155,15,6,0.85);
       transition: color .2s ease, border-color .2s ease, background .2s ease;
     }
     .footer-socials a:hover {
@@ -863,20 +863,21 @@
     <div class="about-grid">
       <div class="about-copy reveal">
         <p class="eyebrow" style="margin-bottom: 24px;">About us</p>
-        <h2 class="h2" style="margin-bottom: 32px;">Empowering your digital presence through <em>AI &amp; innovation</em></h2>
-        <p>We are a collective of digital experts dedicated to making you visible in an increasingly crowded online world. At our core, we believe that <strong>visibility is equal to opportunity.</strong></p>
-        <p>In the modern professional landscape, talent alone isn't enough — if you aren't seen, you are missed. Often, those with fewer skills capture more opportunities simply because they mastered the art of digital networking and social media presence.</p>
-        <p>By leveraging <strong>advanced AI tools</strong> and our in-house <strong>professional video production unit</strong>, we drastically reduce the time and effort required to build a high-impact digital portfolio. We don't just film — we educate.</p>
+        <h2 class="h2" style="margin-bottom: 32px;">Empowering Your Digital Presence Through <em>AI &amp; Innovation</em></h2>
+        <p>We are a collective of digital experts dedicated to making you visible in an increasingly crowded online world. At our core, we believe that <strong>Visibility is Equal to Opportunity.</strong></p>
+        <p>In the modern professional landscape, talent alone isn't enough; if you aren't seen, you are missed. Often, those with fewer skills capture more opportunities simply because they mastered the art of digital networking and social media presence.</p>
+        <p>We are here to change that.</p>
+        <p>By leveraging <strong>Advanced AI Tools</strong> and our in-house <strong>Professional Video Production Unit</strong>, we drastically reduce the time and effort required to build a high-impact digital portfolio. We don't just film; we educate. We train job seekers, working professionals, entrepreneurs, students, and freelancers on the strategic importance of personal branding. From content strategy to business automation, we equip you to lead in the digital age.</p>
       </div>
 
       <div class="about-right reveal">
         <div class="about-card">
           <h3>Our Vision</h3>
-          <p>To empower individuals and brands with the same high-level strategies used by global influencers — integrating AI into the creative process, bridging skill and opportunity, and establishing Digital Excellence Hubs in every town across India.</p>
+          <p>Our vision is to empower individuals and brands with the same high-level social media and AI strategies used by global influencers. We aim to Integrate AI into the creative process to ensure maximum visibility in minimum time, Bridge the gap between skill and opportunity through technology. We are committed to establishing Digital Excellence Hubs in every town across India.</p>
         </div>
         <div class="about-card">
           <h3>Our Mission</h3>
-          <p>End-to-end support in content preparation, high-end video production, branding, and strategic social media — powered by AI. Professional visibility, accessible to everyone, regardless of location.</p>
+          <p>Our mission is to train the next generation of creators &amp; brands by providing end-to-end support in content preparation, high-end video production, branding, marketing and strategic social media management with advanced AI Tools. We ensure that professional visibility and cutting-edge resources are accessible to everyone, regardless of their location.</p>
         </div>
         <div class="about-quote">
           <p>"<span class="accent">Visibility</span> is equal to <span class="accent">opportunity</span>."</p>
@@ -906,7 +907,7 @@
             </svg>
           </div>
           <h3>Personal Branding</h3>
-          <p>Individual portfolio building and profile management for all professionals, Creators &amp; Entrepreneurs — build your unique digital identity.</p>
+          <p>Individual portfolio building and profile management for all professionals, Creators &amp; Entrepreneurs.</p>
           <a href="#contact" class="tag">Get started</a>
         </article>
 
@@ -920,7 +921,7 @@
             </svg>
           </div>
           <h3>AI Innovations</h3>
-          <p>AI Clone Production to automate your presence and save hours of filming — your digital twin works around the clock so you don't have to.</p>
+          <p>AI Clone Production to automate your presence and save hours of filming.</p>
           <a href="#contact" class="tag">Get started</a>
         </article>
 
@@ -934,7 +935,7 @@
             </svg>
           </div>
           <h3>Video Production</h3>
-          <p>High-quality Reels creation, commercial ad shoots, fashion model shoots, and portfolio video projects — all under one roof.</p>
+          <p>High-quality Reels creation, Commercial add shoot, fashion model shoots, and portfolio video projects.</p>
           <a href="#contact" class="tag">Get started</a>
         </article>
 
@@ -948,7 +949,7 @@
             </svg>
           </div>
           <h3>Creator Training</h3>
-          <p>Training the next generation of creators — end-to-end content creation, scriptwriting, and storytelling from complete beginner to confident professional.</p>
+          <p>Training next generation creators, End-to-end content creation, scriptwriting, and storytelling.</p>
           <a href="#contact" class="tag">Get started</a>
         </article>
 
@@ -962,7 +963,7 @@
             </svg>
           </div>
           <h3>Social Media Management</h3>
-          <p>Data-driven strategy, content calendars, and community growth for creators and brands that need measurable momentum across every platform.</p>
+          <p>Social Media Management for individuals &amp; brands, Digital Marketing, and Commercial Ad campaigns.</p>
           <a href="#contact" class="tag">Get started</a>
         </article>
 
@@ -977,7 +978,7 @@
             </svg>
           </div>
           <h3>Business Automation</h3>
-          <p>Streamline your workflows with AI-powered automations — from lead capture to client delivery, we wire the tools that free up your time.</p>
+          <p>Complete business automation using chat bots and AI agents to manage leads and respond to customers while you sleep.</p>
           <a href="#contact" class="tag">Get started</a>
         </article>
       </div>
@@ -1080,15 +1081,15 @@
       <div class="contact-rows">
         <div class="contact-row">
           <span class="label">Email</span>
-          <a class="value" href="mailto:media.bigband@gmail.com">media.bigband@gmail.com</a>
+          <a class="value" href="mailto:media@bigbandinfo.com">media@bigbandinfo.com</a>
         </div>
         <div class="contact-row">
           <span class="label">Phone</span>
-          <a class="value" href="tel:+919746455117">+91 97464 55117</a>
+          <a class="value" href="tel:+919292009117">+91 92920 09117</a>
         </div>
         <div class="contact-row">
           <span class="label">Office</span>
-          <span class="value">Calicut · Kerala · India</span>
+          <span class="value">Ground Floor, Hilite Business Park · Calicut · Kerala</span>
         </div>
         <div class="contact-row">
           <span class="label">Hours</span>
